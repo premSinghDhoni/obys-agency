@@ -1,3 +1,9 @@
+@font-face {
+  font-family: ;
+  src: url();
+}
+
+
 *{
     margin: 0;
     padding: 0;
@@ -9,6 +15,19 @@ html , body{
     height: 100%;
     width: 100%;
 }
+#crsr{
+  height: 2.3vw;
+  width: 2.3vw;
+  border-radius:50%;
+  /* background-color: #fff; */
+  border: 1px solid white;
+  position: fixed;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transform: translate(-50%,-50%);
+}
+
+/* loader starts here */
 #loader{
   height: 100%;
   width: 100%;
@@ -87,13 +106,67 @@ html , body{
     opacity:0;
   }
 }
+/* loader ends here */
 
 #main{
   position: relative;
   background-color:#030303 ;
 }
+
+/* page1 starts here */
 #page1{
   height:100vh;
   width: 100%;
   background-color:#151515 ;
+}
+#page1 #nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2.3vw 5.5vw;
+}
+#page1 #navp2{
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  gap:3vw;
+}
+#navp2 h4{
+  font-size: 1vw;
+  font-weight: 500;
+}
+
+.hero{
+  width: 73%;
+  margin-left:27% ;
+  height:fit-content;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 9999;
+
+
+}
+.hero:nth-child(2){
+  margin-top:18vh;
+}
+.hero h1{
+  font-size: 7.2vw;
+  text-transform: uppercase;
+  line-height: 7.2vw;
+  height: fit-content;
+}
+
+.hero h2, h3{
+  font-size: 7.2vw;
+  text-transform: uppercase;
+  line-height: 7.2vw;
+  height: fit-content;
+}
+
+.hero h2:hover{
+  -webkit-text-stroke: 2px #fff;
+  color: transparent;
+  font-weight: 500;
 }
