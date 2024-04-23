@@ -114,12 +114,19 @@ html , body{
   background-color:#030303 ;
   overflow-x: hidden;
 }
+.mousefollower{
+  border: 2px solid #ffffff;
+  background-color: #ffffff;
+  scale: 2;
+  mix-blend-mode: difference;
+}
 
 /* page1 starts here */
 #page1{
   height:100vh;
   width: 100%;
   background-color:#151515 ;
+  margin-bottom: 20vh;
 }
 #page1 #nav{
   display: flex;
@@ -192,23 +199,27 @@ html , body{
   width: 100%;
   padding: 3vh;
   position: relative;
-  background-color:#151515
+  background-color:#151515;
   
 }
 #video-cont{
-  height: 65vh;
-  width: 70vw;
+  height: 66vh;
+  width: 71vw;
   position: relative;
-  left: 20%;
+  left: 28%;
+  background-color: red;
+  background-image: url("Images/obyAgency.png" );
+  background-size: cover;
+  background-position: center;
 }
 #vcursor{
   background-color: #ffa63d;
-  height: 8vw;
-  width: 8vw;
+  height: 9vw;
+  width: 9vw;
   border-radius: 50%;
   position:absolute;
-  top:0;
-  left: 80%;
+  top:-15%;
+  left: 70%;
   z-index:999;
   display: flex;
   justify-content: center;
@@ -218,26 +229,153 @@ html , body{
   font-size: 2vw;
 
 }
-#video-cont img{
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  top: 0;
-}
 
 #video-cont video{
   height: 100%;
   width: 100%;
   object-fit: cover;
+  opacity: 0;
 }
 
 #page3{
   min-height: 100vh;
   width: 100%;
-  background-color: rgb(173, 167, 167);
+  /* background-color: rgb(173, 167, 167); */
+  position: relative;
+  padding: 7vh 2vw;
+  margin-bottom: 40vh;
+}
+
+#page3 h1{
+  text-transform: uppercase;
+  font-size: 7vw;
+  position: relative;
+  margin-left: 28vw;
+}
+#page3 h1::before{
+  content: "02";
+  position:absolute;
+  font-size: 3vw;
+  font-family:'silk serif';
+  font-weight: 500;
+  left:-20%;
+  top:8%;
+ 
+}
+#page3 .underline{
+  height: 0.2vh;
+  width: 100%;
+  background-color: #fff;
+  margin: 3vw 0;
+  margin-left: 28vw
+}
+#img-div-con{
+  padding: 1vw;
+  position: relative;
+  /* background-color: red; */
+  display: flex; 
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+
+}
+.imgdiv{
+  height: 38vw;
+  width: 27vw;
+  /* background-color:blue; */
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  margin: 2vw; 
+}
+.imgdiv:nth-child(1){
+  height: 29vw;
+  width: 21vw;
+}
+.imgdiv img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+
+}
+.page3circle1{
+  height: 23vw;
+  width: 23vw;
+  /* background-color: #3f7df4; */
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 23vh;
+  margin-left: 10vw;
   position: relative;
 }
+.page3circle1 svg{
+  height: 30%;
+}
+
+.page3circle2{
+  height: 23vw;
+  width: 23vw;
+  /* background-color: #3f7df4; */
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  /* margin-top: 23vh;
+  margin-left: 10vw; */
+}
+.page3circle2 svg{
+  height: 30%;
+  rotate: -45deg;
+}
+
+.cirlceIn{
+  background-color: #fff;
+  color: balck;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  position: absolute;
+  top:0;
+  left:0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  scale:0;
+  transition: all ease 0.3s;
+  transition-delay:0.3s ;
+
+}
+.cirlceIn p{
+  color: #000;
+  width: 60%;
+  scale:0;
+  transition: all ease 0.3s;
+  transition-delay:0.6s ;
+
+
+}
+.page3circle1:hover .cirlceIn{
+  scale: 1;
+
+}
+.page3circle1:hover p{
+  scale: 1;
+}
+
+.page3circle2:hover .cirlceIn{
+  scale: 1;
+
+}
+.page3circle2:hover p{
+  scale: 1;
+}
+
 
 #page4{
   min-height: 100vh;
@@ -319,6 +457,7 @@ html , body{
   width: 100%;
   padding: 5vw 0;
   position: relative;
+  margin-top: 20vh;
 }
 .elm{
   white-space: nowrap;
@@ -385,6 +524,7 @@ html , body{
   position: relative;
   width:100%;
   padding-left: 28vw;
+  margin-top: 20vh;
 }
 
 #footer h1{
@@ -433,4 +573,23 @@ html , body{
   font-weight:500 ;
   font-size: 2vw;
   margin-top: 2vh;
+}
+
+._canvas_container{
+  z-index: 99999 !important;
+  pointer-events: none;
+}
+
+#flag{
+  height: 25vw;
+  position: absolute;
+  top:0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+
+#hero3{
+  z-index: 999;
+  position: relative;
 }
